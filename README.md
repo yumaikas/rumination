@@ -2,7 +2,7 @@
 
 ## About
 
-This is 
+This is a bible reader designed for a more meditative expereince.
 
 ## Setup
 
