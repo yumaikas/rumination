@@ -1,0 +1,530 @@
+[
+	{
+		"book": "GEN",
+		"short_name": "Genesis",
+		"long_name": "The First Book of Moses, Commonly Called Genesis",
+		"min": 1,
+		"max": 1533,
+		"book_num": 1
+	},
+	{
+		"book": "EXO",
+		"short_name": "Exodus",
+		"long_name": "The Second Book of Moses, Commonly Called Exodus",
+		"min": 1534,
+		"max": 2746,
+		"book_num": 2
+	},
+	{
+		"book": "LEV",
+		"short_name": "Leviticus",
+		"long_name": "The Third Book of Moses, Commonly Called Leviticus",
+		"min": 2747,
+		"max": 3605,
+		"book_num": 3
+	},
+	{
+		"book": "NUM",
+		"short_name": "Numbers",
+		"long_name": "The Fourth Book of Moses, Commonly Called Numbers",
+		"min": 3606,
+		"max": 4893,
+		"book_num": 4
+	},
+	{
+		"book": "DEU",
+		"short_name": "Deuteronomy",
+		"long_name": "The Fifth Book of Moses, Commonly Called Deuteronomy",
+		"min": 4894,
+		"max": 5852,
+		"book_num": 5
+	},
+	{
+		"book": "JOS",
+		"short_name": "Joshua",
+		"long_name": "The Book of Joshua",
+		"min": 5853,
+		"max": 6510,
+		"book_num": 6
+	},
+	{
+		"book": "JDG",
+		"short_name": "Judges",
+		"long_name": "The Book of Judges",
+		"min": 6511,
+		"max": 7128,
+		"book_num": 7
+	},
+	{
+		"book": "RUT",
+		"short_name": "Ruth",
+		"long_name": "The Book of Ruth",
+		"min": 7129,
+		"max": 7213,
+		"book_num": 8
+	},
+	{
+		"book": "1SA",
+		"short_name": "1 Samuel",
+		"long_name": "The First Book of Samuel",
+		"min": 7214,
+		"max": 8023,
+		"book_num": 9
+	},
+	{
+		"book": "2SA",
+		"short_name": "2 Samuel",
+		"long_name": "The Second Book of Samuel",
+		"min": 8024,
+		"max": 8718,
+		"book_num": 10
+	},
+	{
+		"book": "1KI",
+		"short_name": "1 Kings",
+		"long_name": "The First Book of Kings",
+		"min": 8719,
+		"max": 9534,
+		"book_num": 11
+	},
+	{
+		"book": "2KI",
+		"short_name": "2 Kings",
+		"long_name": "The Second Book of Kings",
+		"min": 9535,
+		"max": 10253,
+		"book_num": 12
+	},
+	{
+		"book": "1CH",
+		"short_name": "1 Chronicles",
+		"long_name": "The First Book of Chronicles",
+		"min": 10254,
+		"max": 11195,
+		"book_num": 13
+	},
+	{
+		"book": "2CH",
+		"short_name": "2 Chronicles",
+		"long_name": "The Second Book of Chronicles",
+		"min": 11196,
+		"max": 12017,
+		"book_num": 14
+	},
+	{
+		"book": "EZR",
+		"short_name": "Ezra",
+		"long_name": "The Book of Ezra",
+		"min": 12018,
+		"max": 12297,
+		"book_num": 15
+	},
+	{
+		"book": "NEH",
+		"short_name": "Nehemiah",
+		"long_name": "The Book of Nehemiah",
+		"min": 12298,
+		"max": 12703,
+		"book_num": 16
+	},
+	{
+		"book": "EST",
+		"short_name": "Esther",
+		"long_name": "The Book of Esther",
+		"min": 12704,
+		"max": 12870,
+		"book_num": 17
+	},
+	{
+		"book": "JOB",
+		"short_name": "Job",
+		"long_name": "The Book of Job",
+		"min": 12871,
+		"max": 13940,
+		"book_num": 18
+	},
+	{
+		"book": "PSA",
+		"short_name": "Psalms",
+		"long_name": "The Psalms",
+		"min": 13941,
+		"max": 16401,
+		"book_num": 19
+	},
+	{
+		"book": "PRO",
+		"short_name": "Proverbs",
+		"long_name": "The Proverbs",
+		"min": 16402,
+		"max": 17316,
+		"book_num": 20
+	},
+	{
+		"book": "ECC",
+		"short_name": "Ecclesiastes",
+		"long_name": "Ecclesiates or, The Preacher",
+		"min": 17317,
+		"max": 17538,
+		"book_num": 21
+	},
+	{
+		"book": "SNG",
+		"short_name": "Song of Solomon",
+		"long_name": "The Song of Solomon",
+		"min": 17539,
+		"max": 17655,
+		"book_num": 22
+	},
+	{
+		"book": "ISA",
+		"short_name": "Isaiah",
+		"long_name": "The Book of Isaiah",
+		"min": 17656,
+		"max": 18947,
+		"book_num": 23
+	},
+	{
+		"book": "JER",
+		"short_name": "Jeremiah",
+		"long_name": "The Book of Jeremiah",
+		"min": 18948,
+		"max": 20311,
+		"book_num": 24
+	},
+	{
+		"book": "LAM",
+		"short_name": "Lamentations",
+		"long_name": "The Lamentations of Jeremiah",
+		"min": 20312,
+		"max": 20465,
+		"book_num": 25
+	},
+	{
+		"book": "EZK",
+		"short_name": "Ezekiel",
+		"long_name": "The Book of Ezekiel",
+		"min": 20466,
+		"max": 21738,
+		"book_num": 26
+	},
+	{
+		"book": "DAN",
+		"short_name": "Daniel",
+		"long_name": "The Book of Daniel",
+		"min": 21739,
+		"max": 22095,
+		"book_num": 27
+	},
+	{
+		"book": "HOS",
+		"short_name": "Hosea",
+		"long_name": "The Book of Hosea",
+		"min": 22096,
+		"max": 22292,
+		"book_num": 28
+	},
+	{
+		"book": "JOL",
+		"short_name": "Joel",
+		"long_name": "The Book of Joel",
+		"min": 22293,
+		"max": 22365,
+		"book_num": 29
+	},
+	{
+		"book": "AMO",
+		"short_name": "Amos",
+		"long_name": "The Book of Amos",
+		"min": 22366,
+		"max": 22511,
+		"book_num": 30
+	},
+	{
+		"book": "OBA",
+		"short_name": "Obadiah",
+		"long_name": "The Book of Obadiah",
+		"min": 22512,
+		"max": 22532,
+		"book_num": 31
+	},
+	{
+		"book": "JON",
+		"short_name": "Jonah",
+		"long_name": "The Book of Jonah",
+		"min": 22533,
+		"max": 22580,
+		"book_num": 32
+	},
+	{
+		"book": "MIC",
+		"short_name": "Micah",
+		"long_name": "The Book of Micah",
+		"min": 22581,
+		"max": 22685,
+		"book_num": 33
+	},
+	{
+		"book": "NAM",
+		"short_name": "Nahum",
+		"long_name": "The Book of Nahum",
+		"min": 22686,
+		"max": 22732,
+		"book_num": 34
+	},
+	{
+		"book": "HAB",
+		"short_name": "Habakkuk",
+		"long_name": "The Book of Habakkuk",
+		"min": 22733,
+		"max": 22788,
+		"book_num": 35
+	},
+	{
+		"book": "ZEP",
+		"short_name": "Zephaniah",
+		"long_name": "The Book of Zephaniah",
+		"min": 22789,
+		"max": 22841,
+		"book_num": 36
+	},
+	{
+		"book": "HAG",
+		"short_name": "Haggai",
+		"long_name": "The Book of Haggai",
+		"min": 22842,
+		"max": 22879,
+		"book_num": 37
+	},
+	{
+		"book": "ZEC",
+		"short_name": "Zechariah",
+		"long_name": "The Book of Zechariah",
+		"min": 22880,
+		"max": 23090,
+		"book_num": 38
+	},
+	{
+		"book": "MAL",
+		"short_name": "Malachi",
+		"long_name": "The Book of Malachi",
+		"min": 23091,
+		"max": 23145,
+		"book_num": 39
+	},
+	{
+		"book": "MAT",
+		"short_name": "Matthew",
+		"long_name": "The Good News According to Matthew",
+		"min": 23146,
+		"max": 24216,
+		"book_num": 40
+	},
+	{
+		"book": "MRK",
+		"short_name": "Mark",
+		"long_name": "The Good News According to Mark",
+		"min": 24217,
+		"max": 24894,
+		"book_num": 41
+	},
+	{
+		"book": "LUK",
+		"short_name": "Luke",
+		"long_name": "The Good News According to Luke",
+		"min": 24895,
+		"max": 26044,
+		"book_num": 42
+	},
+	{
+		"book": "JHN",
+		"short_name": "John",
+		"long_name": "The Good News According to John",
+		"min": 26045,
+		"max": 26923,
+		"book_num": 43
+	},
+	{
+		"book": "ACT",
+		"short_name": "Acts",
+		"long_name": "The Acts of the Apostles",
+		"min": 26924,
+		"max": 27927,
+		"book_num": 44
+	},
+	{
+		"book": "ROM",
+		"short_name": "Romans",
+		"long_name": "Paul\u2019s Letter to the Romans",
+		"min": 27928,
+		"max": 28360,
+		"book_num": 45
+	},
+	{
+		"book": "1CO",
+		"short_name": "1 Corinthians",
+		"long_name": "Paul\u2019s First Letter to the Corinthians",
+		"min": 28361,
+		"max": 28797,
+		"book_num": 46
+	},
+	{
+		"book": "2CO",
+		"short_name": "2 Corinthians",
+		"long_name": "Paul\u2019s Second Letter to the Corinthians",
+		"min": 28798,
+		"max": 29054,
+		"book_num": 47
+	},
+	{
+		"book": "GAL",
+		"short_name": "Galatians",
+		"long_name": "Paul\u2019s Letter to the Galatians",
+		"min": 29055,
+		"max": 29203,
+		"book_num": 48
+	},
+	{
+		"book": "EPH",
+		"short_name": "Ephesians",
+		"long_name": "Paul\u2019s Letter to the Ephesians",
+		"min": 29204,
+		"max": 29358,
+		"book_num": 49
+	},
+	{
+		"book": "PHP",
+		"short_name": "Philippians",
+		"long_name": "Paul\u2019s Letter to the Philippians",
+		"min": 29359,
+		"max": 29462,
+		"book_num": 50
+	},
+	{
+		"book": "COL",
+		"short_name": "Colossians",
+		"long_name": "Paul\u2019s Letter to the Colossians",
+		"min": 29463,
+		"max": 29557,
+		"book_num": 51
+	},
+	{
+		"book": "1TH",
+		"short_name": "1 Thessalonians",
+		"long_name": "Paul\u2019s First Letter to the Thessalonians",
+		"min": 29558,
+		"max": 29646,
+		"book_num": 52
+	},
+	{
+		"book": "2TH",
+		"short_name": "2 Thessalonians",
+		"long_name": "Paul\u2019s Second Letter to the Thessalonians",
+		"min": 29647,
+		"max": 29693,
+		"book_num": 53
+	},
+	{
+		"book": "1TI",
+		"short_name": "1 Timothy",
+		"long_name": "Paul\u2019s First Letter to Timothy",
+		"min": 29694,
+		"max": 29806,
+		"book_num": 54
+	},
+	{
+		"book": "2TI",
+		"short_name": "2 Timothy",
+		"long_name": "Paul\u2019s Second Letter to Timothy",
+		"min": 29807,
+		"max": 29889,
+		"book_num": 55
+	},
+	{
+		"book": "TIT",
+		"short_name": "Titus",
+		"long_name": "Paul\u2019s Letter to Titus",
+		"min": 29890,
+		"max": 29935,
+		"book_num": 56
+	},
+	{
+		"book": "PHM",
+		"short_name": "Philemon",
+		"long_name": "Paul\u2019s Letter to Philemon",
+		"min": 29936,
+		"max": 29960,
+		"book_num": 57
+	},
+	{
+		"book": "HEB",
+		"short_name": "Hebrews",
+		"long_name": "The Letter to the Hebrews",
+		"min": 29961,
+		"max": 30263,
+		"book_num": 58
+	},
+	{
+		"book": "JAS",
+		"short_name": "James",
+		"long_name": "The Letter from James",
+		"min": 30264,
+		"max": 30371,
+		"book_num": 59
+	},
+	{
+		"book": "1PE",
+		"short_name": "1 Peter",
+		"long_name": "Peter\u2019s First Letter",
+		"min": 30372,
+		"max": 30476,
+		"book_num": 60
+	},
+	{
+		"book": "2PE",
+		"short_name": "2 Peter",
+		"long_name": "Peter\u2019s Second Letter",
+		"min": 30477,
+		"max": 30537,
+		"book_num": 61
+	},
+	{
+		"book": "1JN",
+		"short_name": "1 John",
+		"long_name": "John\u2019s First Letter",
+		"min": 30538,
+		"max": 30642,
+		"book_num": 62
+	},
+	{
+		"book": "2JN",
+		"short_name": "2 John",
+		"long_name": "John\u2019s Second Letter",
+		"min": 30643,
+		"max": 30655,
+		"book_num": 63
+	},
+	{
+		"book": "3JN",
+		"short_name": "3 John",
+		"long_name": "John\u2019s Third Letter",
+		"min": 30656,
+		"max": 30669,
+		"book_num": 64
+	},
+	{
+		"book": "JUD",
+		"short_name": "Jude",
+		"long_name": "The Letter from Jude",
+		"min": 30670,
+		"max": 30694,
+		"book_num": 65
+	},
+	{
+		"book": "REV",
+		"short_name": "Revelation",
+		"long_name": "The Revelation to John",
+		"min": 30695,
+		"max": 31098,
+		"book_num": 66
+	}
+]
