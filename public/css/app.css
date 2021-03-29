@@ -1,0 +1,72 @@
+body {
+ max-width:1200px;
+ width:90%;
+}
+body, input, textarea {
+ font-family:Iosevka,monospace;
+ background:#191e2a;
+ color:#21ef9f;
+}
+td {
+ margin:5px;
+}
+a {
+ color:#00ffff;
+}
+a:visited {
+ color:#008b8b;
+}
+
+.one-per-line {
+	display: block;
+}
+
+.verse {
+    line-height: 1.6em;
+}
+
+.verseNum {
+    line-height: 1em;
+}
+
+.form-input {
+	display: block;
+	margin-top: 10px;
+}
+
+.form-input input:nth-child(1) {
+	margin-top: 10px;
+}
+
+.pad {
+	margin-left: 30px;
+	display: block;
+}
+
+table {
+	text-align: left;
+	border-spacing: 10px;
+	border-bottom: 1px #21ef9f;
+}
+
+th, td {
+	border-bottom: 1px solid #21ef9f;
+	border-right: 1px solid #21ef9f;
+}
+
+.larger {
+	font-size: 25px;
+}
+
+.chapter-grid {
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: repeat(5, 1fr);
+	grid-auto-rows: auto;
+}
+
+.chapter-num-link {
+	grid-row: inherit;
+	margin-left: 10px;
+	margin-right: 10px;
+}
