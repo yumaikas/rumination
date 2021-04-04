@@ -1,6 +1,4 @@
-import minty from './minty.js';
-import dale from './dale.js';
-import localForage from `./localforage.js`
+import localForage from `./vendor/localforage.js`
 
 function logErr(msg, err) {
     console.error(msg, err);
@@ -8,15 +6,18 @@ function logErr(msg, err) {
 // TODO: Make this not hardcoded, but maybe generate it at build time?
 export var maxVerse = 31098;
 
+export function linkOfRange(start, end) {
+    return `#passage/${start}/${end}`;
+}
+
 export function bookLoader(book, resolve, reject) {
     function ajaxBook(book, resolve, reject) {
-        minty.ajax('GET', '/book/' + book, {}, {}, function(err,data) {
-            if (err) {
-                reject(err);
-            }
-            localForage.setItem(book, data.body);
-            resolve(data.body);
-        });
+        fetch('/book/' + book)
+            .then((resp) => resp.json())
+            .then(data => {
+                localForage.setItem(book, data);
+            })
+            .catch((error) => reject(error));
     }
     /*
      * Check to see if we've loaded the book into IndxedDb already
@@ -34,7 +35,8 @@ export function getBookRange(toc, start, end) {
     var book_range = [];
     var scanning = false;
 
-    dale.stop(toc, true, function(b) {
+    // Scan until we find the end of the range.
+    toc.find(function(b) {
         if (b.min <= start && start <= b.max) {
             scanning = true;
         }
@@ -47,12 +49,12 @@ export function getBookRange(toc, start, end) {
             book_range.push(b);
         }
     });
+    
     return book_range;
 }
 
 export function loadPassage(toc, start, end, passageLoadCompleted) {
     var book_range = getBookRange(toc, start, end);
-    console.log(toc, book_range);
 
     var book_loads = new Map();
 
@@ -65,7 +67,6 @@ export function loadPassage(toc, start, end, passageLoadCompleted) {
     }
 
     function loadBook(book) {
-        console.log("Loading:", book.book);
         var retries = 3;
         var delay = 100;
 
@@ -75,12 +76,11 @@ export function loadPassage(toc, start, end, passageLoadCompleted) {
                 book_id: book,
                 data: bookData
             });
-            console.log(book_loads);
             if (book_loads.size == book_range.length) {
 
                 // flatten the books into a single array, first
                 var verses = [];
-                dale.go(book_range, function(b) {
+                book_range.forEach(function(b) {
                     let load = book_loads.get(b);
                     if (load.status === "success") {
                         var bookVerses = book_loads.get(b).data;
@@ -117,7 +117,7 @@ export function loadPassage(toc, start, end, passageLoadCompleted) {
     }
 
     // Kick off all of the loads
-    dale.go(book_range, function(b) { loadBook(b); })
+    book_range.forEach(function(b) { loadBook(b); });
 }
 
  
