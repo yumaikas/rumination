@@ -7,8 +7,23 @@
   :dependencies ["path"
                  "https://github.com/swlkr/osprey"])
 
-# 
+(def react-path (path/abspath (path/join "js" "vendor" "react")))
+
+(defn- swap-react [& args]
+  (def [react react-dom] args)
+  (def curr-path (os/cwd))
+  (defer (os/cd curr-path)
+    (os/cd react-path)
+    (spit "../react.js" (slurp react))
+    (spit "../react.dom.js" (slurp react-dom))))
+
+(defn- adjust-react [] 
+  (match (os/getenv "DEPLOY_ENV") 
+    "production" (swap-react "react.production.js" "react.dom.production.js")
+    _ (swap-react "react.development.js" "react.dom.development.js")))
+
 (phony "bundle" []
+       (adjust-react)
        (def app-path (path/join "js" "app.jsx"))
        (def out-path (path/join "public" "js" "bundle.js"))
        (def esbuild (match (os/which)
@@ -19,6 +34,7 @@
 
 (var bundle-proc nil)
 (phony "watch-bundle" []
+       (adjust-react)
        (def app-path (path/join "js" "app.jsx"))
        (def out-path (path/join "public" "js" "bundle.js"))
        (def esbuild (match (os/which)
