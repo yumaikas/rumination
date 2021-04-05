@@ -2,9 +2,10 @@
 (defn s. [& args] (string ;args))
 
 (declare-project 
-  :name "mb-web-bible"
+  :name "rumination"
   :description "A PWA Bible app written in React, with a minimal Janet server."
   :dependencies ["path"
+                 "https://github.com/yumaikas/janet-errs"
                  "https://github.com/swlkr/osprey"])
 
 (def react-path (path/abspath (path/join "js" "vendor" "react")))
