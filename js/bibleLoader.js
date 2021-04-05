@@ -16,6 +16,7 @@ export function bookLoader(book, resolve, reject) {
             .then((resp) => resp.json())
             .then(data => {
                 localForage.setItem(book, data);
+                resolve(data);
             })
             .catch((error) => reject(error));
     }
