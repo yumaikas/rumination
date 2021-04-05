@@ -1,4 +1,5 @@
 (use osprey)
+(import err)
 (import path)
 (import ./views :as v)
 
@@ -36,6 +37,14 @@
          :headers @{"Content-Type" "text/plain"}
          :body (s. "Book ID " (params :book-id) " is not valid") }))
 
+(var *port* 60808)
+
+(let [port-str (os/getenv "PORT" "60808")]
+ (set *port* (scan-number (os/getenv "PORT" "60808")))
+ (when (nil? *port*) (err/str "PORT should be a number, not " port-str ".")))
+
 (enable :static-files)
-(os/shell "start http://localhost:60808")
-(server 60808 "0.0.0.0")
+(when (= [:windows "development"] [(os/which) (os/getenv "DEPLOY_ENV")])
+  (os/shell "start http://localhost:60808"))
+
+(server *port*)
