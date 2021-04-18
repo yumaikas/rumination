@@ -16,6 +16,11 @@ export function bookLoader(book, resolve, reject) {
             .then((resp) => resp.json())
             .then(data => {
                 localForage.setItem(book, data);
+                localForage.getItem("loaded.books").then((books) => {
+                    books = books || {};
+                    books[book] = true;
+                    localForage.setItem("loaded.books", books);
+                })
                 resolve(data);
             })
             .catch((error) => reject(error));
@@ -52,6 +57,40 @@ export function getBookRange(toc, start, end) {
     });
     
     return book_range;
+}
+
+export function getInstallStatus(callback) {
+    return new Promise((resolve, reject) => {
+        localForage.getItem("loaded.books").then(books => {
+            if (!books) {
+                resolve(false);
+                return;
+            }
+            if (Object.keys(books).length == 66) {
+                resolve(true);
+                return;
+            }
+            resolve(false);
+            return;
+        }).catch((reason) => reject(reason));
+    });
+}
+
+export function installToLocalStorage() {
+    console.log("Downloading books now");
+    return new Promise((resolve, reject) => {
+        let booksSaved = 0;
+        function bookIsSaved(book) {
+            booksSaved++;
+            if (booksSaved === 66) {
+                resolve();
+            }
+        }
+
+
+        let books = [ "1CH", "1KI", "1TH", "2CO", "2PE", "2TI", "AMO", "DEU", "EST", "EZR", "HAB", "HOS", "JDG", "JOB", "JOS", "LEV", "MAT", "NAM", "OBA", "PRO", "ROM", "TIT", "ZEC", "1CO", "1PE", "1TI", "2JN", "2SA", "3JN", "COL", "ECC", "EXO", "GAL", "HAG", "ISA", "JER", "JOL", "JUD", "LUK", "MIC", "NEH", "PHM", "PSA", "RUT", "ZEP", "1JN", "1SA", "2CH", "2KI", "2TH", "ACT", "DAN", "EPH", "EZK", "GEN", "HEB", "JAS", "JHN", "JON", "LAM", "MAL", "MRK", "NUM", "PHP", "REV", "SNG" ];
+        books.forEach(book => bookLoader(book, bookIsSaved, reject));
+    });
 }
 
 export function loadPassage(toc, start, end, passageLoadCompleted) {

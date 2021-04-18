@@ -6,6 +6,7 @@ import localForage from '../vendor/localforage';
 import {Passage} from './Passage';
 import {TestamentNavigator} from './TestamentNavigator';
 import {ChapterNavigator} from './ChapterNavigator';
+import {Settings} from './Settings';
 
 var loaded = false;
 function useDispatchHash(setNav) {
@@ -65,7 +66,7 @@ export function BibleApp(props) {
     useEffect(() => {
         let mounted = true;
         localForage.getItem("passage.last.bookmark").then((data) =>{
-            setBookmark(data);
+            if (mounted) { setBookmark(data); };
         });
         return () => {
             mounted = false;
@@ -100,6 +101,7 @@ export function BibleApp(props) {
         return (<> 
             <h2>Ruminator Bible Reader</h2>
             <TestamentNavigator otBooks={otBooks} ntBooks={ntBooks} />
+            <Settings/>
             <About/>
             { bookmark && <a className="larger" href={linkOfRange(bookmark.start, bookmark.end)}>Where you left off</a> }
             </>);

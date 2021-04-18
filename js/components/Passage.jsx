@@ -15,6 +15,7 @@ export function Passage(props) {
     tableOfContents.forEach(function (b) {
         tocMap.set(b.book, b);
     });
+
     function getBookFromToc(book_id) {
         return tocMap.get(book_id);
     }
@@ -49,6 +50,7 @@ export function Passage(props) {
         <a href={link_add_start}>Previous Verse</a>
         <span> </span>
         <a href={link_pop_start}>Hide Verse</a>
+        <div className="passage">
         {verses.map((v) => {
             var output = [];
             let book = getBookFromToc(v.book);
@@ -65,6 +67,7 @@ export function Passage(props) {
                     {output}<span className="verse"><sup className="verseNum">{v.verse}</sup>{v.verseText}</span>
                 </React.Fragment>);
         })}
+        </div>
 
         <br/>
         <br/>

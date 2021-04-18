@@ -23,21 +23,25 @@
     "production" (swap-react "react.production.js" "react.dom.production.js")
     _ (swap-react "react.development.js" "react.dom.development.js")))
 
+# TODO: Copy sw.js from js/ to public/js, rather than leaving it in public/js
 (phony "bundle" []
        (adjust-react)
        (def app-path (path/join "js" "app.jsx"))
        (def out-path (path/join "public" "js" "bundle.js"))
+       (def app-path (path/join "js" "app.jsx"))
        (def esbuild (match (os/which)
                       :windows "esbuild.cmd"
                       _ "esbuild"))
-       (def bundleProc (os/spawn [esbuild app-path "--bundle" "--minify" (s. "--outfile=" out-path)] :p))
-         (:wait bundleProc))
+       (def bundleProc 
+         (os/spawn [esbuild app-path "--bundle" "--minify" (s. "--outfile=" out-path)] :p))
+
+       (:wait bundleProc))
 
 (var bundle-proc nil)
 (phony "watch-bundle" []
        (adjust-react)
        (def app-path (path/join "js" "app.jsx"))
-       (def out-path (path/join "public" "js" "bundle.js"))
+       (def app-out-path (path/join "public" "js" "bundle.js"))
        (def esbuild (match (os/which)
                       :windows "esbuild.cmd"
                       _ "esbuild"))
@@ -47,7 +51,7 @@
                           #"--minify" 
                           "--sourcemap" 
                           "--watch"
-                          (s. "--outfile=" out-path)] 
+                          (s. "--outfile=" app-out-path)] 
                          :p)))
 
 (phony "server" ["watch-bundle"]

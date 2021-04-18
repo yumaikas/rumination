@@ -1,5 +1,5 @@
 body {
- max-width:1200px;
+ max-width:800px;
  width:90%;
 }
 body, input, textarea {
@@ -15,6 +15,12 @@ a {
 }
 a:visited {
  color:#008b8b;
+}
+
+.passage {
+    margin-left: 15px;
+    margin-right: 15px;
+    text-align: justify;
 }
 
 .one-per-line {
