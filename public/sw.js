@@ -1,4 +1,4 @@
-let CACHE_NAME = "rumination-bible-cache-v2";
+let CACHE_NAME = "rumination-bible-cache-v3";
 
 var asset_urls = [
     "/",
