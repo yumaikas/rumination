@@ -82,7 +82,7 @@ export function getInstallStatus(callback) {
                 return;
             }
             console.log(books);
-            if (Object.keys(books).length == 66) {
+            if (Object.keys(books).length >= 66) {
                 resolve(true);
                 return;
             }
