@@ -6,21 +6,32 @@ function logErr(msg, err) {
 // TODO: Make this not hardcoded, but maybe generate it at build time?
 export var maxVerse = 31098;
 
+let bookStatuses = null;
+
+localForage.getItem("loaded.books").then((books) => {
+    bookStatuses = books || {};
+});
+
 export function linkOfRange(start, end) {
     return `#passage/${start}/${end}`;
 }
 
 export function bookLoader(book, resolve, reject) {
+    function checkBooks() {
+        console.log("Checking", book);
+        if (bookStatuses === null) {
+            setTimeout(checkBooks, 10);
+        } else {
+            bookStatuses[book] = true;
+            localForage.setItem("loaded.books", bookStatuses);
+        }
+    }
     function ajaxBook(book, resolve, reject) {
         fetch('/book/' + book)
             .then((resp) => resp.json())
             .then(data => {
                 localForage.setItem(book, data);
-                localForage.getItem("loaded.books").then((books) => {
-                    books = books || {};
-                    books[book] = true;
-                    localForage.setItem("loaded.books", books);
-                })
+                checkBooks();
                 resolve(data);
             })
             .catch((error) => reject(error));
@@ -29,9 +40,12 @@ export function bookLoader(book, resolve, reject) {
      * Check to see if we've loaded the book into IndxedDb already
      */
     localForage.getItem(book).then((bookData) => {
-        if (bookData == null) {
+        if (bookData === null) {
             ajaxBook(book, resolve, reject);
+            checkBooks();
             return;
+        } else {
+            checkBooks();
         }
         resolve(bookData);
     });
@@ -63,9 +77,11 @@ export function getInstallStatus(callback) {
     return new Promise((resolve, reject) => {
         localForage.getItem("loaded.books").then(books => {
             if (!books) {
+                console.log("null books", books);
                 resolve(false);
                 return;
             }
+            console.log(books);
             if (Object.keys(books).length == 66) {
                 resolve(true);
                 return;

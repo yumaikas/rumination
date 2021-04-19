@@ -7,6 +7,7 @@ var asset_urls = [
     "/css/app.css",
     "/img/icon3x.png",
     "/img/icon8x.png",
+    "/favicon.ico",
     "/manifest.json"
 ];
 
