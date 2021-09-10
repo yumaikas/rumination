@@ -4,6 +4,8 @@
 (declare-project 
   :name "rumination"
   :description "A PWA Bible app written in React, with a minimal Janet server."
+  :author "Andrew Owen <yumaikas94@gmail.com>"
+  :url "https://github.com/yumaikas/rumination"
   :dependencies ["path"
                  "https://github.com/yumaikas/janet-errs"
                  "https://github.com/swlkr/osprey"])
